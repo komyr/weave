@@ -146,6 +146,15 @@ items:
               env:
                 - name: INIT_CONTAINER
                   value: "true"
+                - name: IPTABLES_BACKEND
+                  value: nft
+                - name: IPALLOC_RANGE
+                  value: 10.208.0.0/16
+                - name: WEAVE_PASSWORD
+                  valueFrom:
+                    secretKeyRef:
+                      name: weave-passwd
+                      key: weave-passwd
                 - name: HOSTNAME
                   valueFrom:
                     fieldRef:
